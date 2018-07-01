@@ -12,7 +12,8 @@
 \title{\'INDICES DE DESARROLLO HUMANO DE COLOMBIA}
 
 \author[1]{\normalsize Mar\'ia Ang\'elica Galezzo Mart\'inez}
-\affil[1]{\small  Escuela de Ingenier\'ia,Universidad de los Andes\\
+\affil[1]{\small  Escuela de Ingenier\'ia,Universidad de los Andes,\\
+
 \texttt{{ma.galezzo}@uniandes.edu.co}}
 
 \date{30 de junio de 2018}
@@ -51,45 +52,84 @@ stargazer(vars1,title = "Medidas estad\'isticas", label="stats", summary.stat = 
 
 Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.
 
-Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.
 
 Ac\'a podemos observar el histograma del IDH para Colombia \ref{histogramas} en la p\'agina \pageref{histogramas}. 
 
 \begin{figure}[h]
 \centering
+\begin{adjustbox}{width=12cm,height=7cm,clip,trim=0cm 0.0cm 0cm 0cm}
 <<HistogramaIDHPlot,echo=FALSE,fig=TRUE>>=
 par(mfrow=c(2,2))
 title='IDH en Colombia'
-paleta='blue'
-hist(datos_colombia$IDH,main=title,
-        col=paleta,ylim = c(0,25),
+paleta='gray90'
+IDH=datos_colombia$IDH
+hist(IDH,main=title,
+        col=paleta,ylim = c(0,30),
         ylab = "%")
 ###
-datos_colombia$cabeLog=log(datos_colombia$Poblaci..n.Cabecera)
 title='Pob en las cabeceras del pais'
-paleta='blue'
-hist(datos_colombia$cabeLog,main=title,
-        col=paleta,ylim = c(0,25),
+paleta='gray90'
+Cabecera=datos_colombia$Poblaci..n.Cabecera
+hist(Cabecera ,main=title,
+        col=paleta,ylim = c(0,30),
         ylab = "%")
 ###
-datos_colombia$restoLog=log(datos_colombia$Poblaci..n.Resto)
 title='Pob en el resto del pais'
-paleta='blue'
-hist(datos_colombia$restoLog,main=title,
-        col=paleta,ylim = c(0,25),
+paleta='gray90'
+Resto=datos_colombia$Poblaci..n.Resto
+hist(Resto,main=title,
+        col=paleta,ylim = c(0,30),
         ylab = "%")
 ###
-datos_colombia$totalLog=log(datos_colombia$Poblaci..n.Total)
 title='Pob total del pais'
-paleta='blue'
-hist(datos_colombia$totalLog,main=title,
-        col=paleta,ylim = c(0,25),
+paleta='gray90'
+Total=datos_colombia$Poblaci..n.Total
+hist(Total,main=title,
+        col=paleta,ylim = c(0,30),
         ylab = "%")
+
+
 @
+\end{adjustbox}
 \caption{Histogramas}
 \label{histogramas}
 \end{figure}
 
+\begin{figure}[h]
+\centering
+\begin{adjustbox}{width=12cm,height=6cm,clip,trim=0cm 0cm 0cm 0cm}
+<<HistogramaIDHNormPlot,echo=FALSE,fig=TRUE>>=
+par(mfrow=c(1,3))
+datos_colombia$cabeLog=log(datos_colombia$Poblaci..n.Cabecera)
+title='Pob en las cabeceras'
+paleta='gray90'
+Log_Cabecera=datos_colombia$cabeLog
+hist(Log_Cabecera,main=title,
+        col=paleta,ylim = c(0,20),
+        ylab = "%")
+###
+datos_colombia$restoLog=log(datos_colombia$Poblaci..n.Resto)
+title='Pob en el resto'
+paleta='gray90'
+Log_Resto=datos_colombia$cabeLog
+hist(Log_Resto,main=title,
+        col=paleta,ylim = c(0,20),
+        ylab = "%")
+###
+datos_colombia$totaltoLog=log(datos_colombia$Poblaci..n.Total)
+title='Pob total'
+paleta='gray90'
+Log_Total=datos_colombia$cabeLog
+hist(Log_Total,main=title,
+        col=paleta,ylim = c(0,20),
+        ylab = "%")
+
+@
+\end{adjustbox}
+\caption{Histogramas Normalizados}
+\label{histogramas_normalizados}
+\end{figure}
+\clearpage
 
 \section{Exploraci\'on Bivariada}
 
@@ -115,7 +155,7 @@ Lo visto en la Tabla \ref{corrTable} se refuerza claramente en la Figura \ref{co
 
 \begin{figure}[h]
 \centering
-\begin{adjustbox}{width=7cm,height=7cm,clip,trim=1cm 0.5cm 0cm 1cm}
+\begin{adjustbox}{width=7cm,height=7cm,clip,trim=0cm 0cm 0cm 0cm}
 <<corrPlot, echo=FALSE,fig=TRUE>>=
 library(corrplot)
 plot(datos_colombia[,explanans])
@@ -163,7 +203,7 @@ mapCol_idh=merge(mapCol,sub_colb, by.x='NAME_1', by.y='Departamento',all.x=F,)
 dimensions=c("NAME_1","IDH","cabeLog","restoLog")
 library(cluster)
 dataCluster=mapCol_idh@data[,c(dimensions)]
-dataCluster=mapCol_idh@data[,c(dimensions)]
+dataCluster[,-1]=scale(dataCluster[,-1])
 resultado=kmeans(dataCluster[,-1],3)
 clusters=as.data.frame(resultado$cluster)
 clusters$NAME_1=dataCluster$NAME_1
@@ -174,7 +214,7 @@ mapCol_idh=merge(mapCol_idh,clusters, by='NAME_1',all.x=F)
 
 \begin{figure}[h]
 \centering
-\begin{adjustbox}{width=11cm,height=8cm,clip,trim=1cm 1cm 2cm 1cm}
+\begin{adjustbox}{width=10cm,height=8cm,clip,trim=1cm 1cm 1cm 1cm}
 <<plotMap, echo=FALSE, fig=TRUE>>=
 library(RColorBrewer)
 library(classInt)

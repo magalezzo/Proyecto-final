@@ -12,7 +12,8 @@
 \title{\'INDICES DE DESARROLLO HUMANO DE COLOMBIA}
 
 \author[1]{\normalsize Mar\'ia Ang\'elica Galezzo Mart\'inez}
-\affil[1]{\small  Escuela de Ingenier\'ia,Universidad de los Andes\\
+\affil[1]{\small  Escuela de Ingenier\'ia,Universidad de los Andes,\\
+
 \texttt{{ma.galezzo}@uniandes.edu.co}}
 
 \date{30 de junio de 2018}
@@ -41,7 +42,7 @@ En esta secci\'on se explora el \'indice de desarrollo humano, la poblaci\'on en
 
 Ac\'a podemos ver la informaci\'n estad\'istica para Colombia, debido a que es importante saber el valor central. Como los valores son de naturaleza ordinal debemos pedir la {\bf mediana} y otras medidas de posici\'on (como los \emph{cuartiles}, los que no pediremos pues son pocos valores). La mediana de cada variable la mostramos en la Tabla \ref{stats} en la p\'agina \pageref{stats}.
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Sat, Jun 30, 2018 - 21:49:34
+% Date and time: Sat, Jun 30, 2018 - 23:30:31
 \begin{table}[!htbp] \centering 
   \caption{Medidas estad'isticas} 
   \label{stats} 
@@ -58,23 +59,33 @@ Poblaci..n.Total & 32 & 1,028,429 \\
 \end{table} 
 Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.
 
-Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.
 
 Ac\'a podemos observar el histograma del IDH para Colombia \ref{histogramas} en la p\'agina \pageref{histogramas}. 
 
 \begin{figure}[h]
 \centering
+\begin{adjustbox}{width=12cm,height=7cm,clip,trim=0cm 0.0cm 0cm 0cm}
 \includegraphics{Proyecto_final-HistogramaIDHPlot}
+\end{adjustbox}
 \caption{Histogramas}
 \label{histogramas}
 \end{figure}
 
+\begin{figure}[h]
+\centering
+\begin{adjustbox}{width=12cm,height=6cm,clip,trim=0cm 0cm 0cm 0cm}
+\includegraphics{Proyecto_final-HistogramaIDHNormPlot}
+\end{adjustbox}
+\caption{Histogramas Normalizados}
+\label{histogramas_normalizados}
+\end{figure}
+\clearpage
 
 \section{Exploraci\'on Bivariada}
 
 En este trabajo se pretende conocer el impacto que tiene la poblaci\'on en el \'Indice de Desarrollo Humano del pa\'is.
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Sat, Jun 30, 2018 - 21:49:34
+% Date and time: Sat, Jun 30, 2018 - 23:30:31
 \begin{table}[!htbp] \centering 
   \caption{Correlaci'on de IDH con las dem'as variables} 
   \label{} 
@@ -89,7 +100,7 @@ $0.487$ & $0.177$ \\
 \end{table} 
 Veamos la correlaci\'on entre las variables independientes.
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Sat, Jun 30, 2018 - 21:49:34
+% Date and time: Sat, Jun 30, 2018 - 23:30:31
 \begin{table}[!htbp] \centering 
   \caption{Correlaci'on entre variables independientes} 
   \label{} 
@@ -107,7 +118,7 @@ Lo visto en la Tabla \ref{corrTable} se refuerza claramente en la Figura \ref{co
 
 \begin{figure}[h]
 \centering
-\begin{adjustbox}{width=7cm,height=7cm,clip,trim=1cm 0.5cm 0cm 1cm}
+\begin{adjustbox}{width=7cm,height=7cm,clip,trim=0cm 0cm 0cm 0cm}
 \includegraphics{Proyecto_final-corrPlot}
 \end{adjustbox}
 \caption{correlaci\'on entre predictores}
@@ -120,7 +131,7 @@ Finalmente, observamos los modelos propuestos, primero sin la poblaci\'on del re
 
 
 % Table created by stargazer v.5.2.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Sat, Jun 30, 2018 - 21:49:34
+% Date and time: Sat, Jun 30, 2018 - 23:30:31
 \begin{table}[!htbp] \centering 
   \caption{Modelos de Regresi'on} 
   \label{regresiones} 
@@ -165,7 +176,7 @@ Estos son los lugares donde tenemos informaci\'on:
 
 \begin{figure}[h]
 \centering
-\begin{adjustbox}{width=11cm,height=8cm,clip,trim=1cm 1cm 2cm 1cm}
+\begin{adjustbox}{width=10cm,height=8cm,clip,trim=1cm 1cm 1cm 1cm}
 \includegraphics{Proyecto_final-plotMap}
 \end{adjustbox}
 \caption{Conglomerado de departamentos seg\'un sus indicadores de desarrollo humano}\label{clustmap}
