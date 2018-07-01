@@ -111,15 +111,15 @@ hist(Log_Cabecera,main=title,
 datos_colombia$restoLog=log(datos_colombia$Poblaci..n.Resto)
 title='Pob en el resto'
 paleta='gray90'
-Log_Resto=datos_colombia$cabeLog
+Log_Resto=datos_colombia$restoLog
 hist(Log_Resto,main=title,
         col=paleta,ylim = c(0,20),
         ylab = "%")
 ###
-datos_colombia$totaltoLog=log(datos_colombia$Poblaci..n.Total)
+datos_colombia$totalLog=log(datos_colombia$Poblaci..n.Total)
 title='Pob total'
 paleta='gray90'
-Log_Total=datos_colombia$cabeLog
+Log_Total=datos_colombia$totalLog
 hist(Log_Total,main=title,
         col=paleta,ylim = c(0,20),
         ylab = "%")
