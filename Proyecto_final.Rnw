@@ -47,7 +47,7 @@ Ac\'a podemos ver la informaci\'n estad\'istica para Colombia, debido a que es i
 <<summary, results=tex, echo=FALSE>>=
 library(stargazer)
 vars1 <- datos_colombia[, c(2:5)]
-stargazer(vars1,title = "Medidas estad\'isticas", label="stats", summary.stat = c("n", "median"))
+stargazer(vars1,title = "Medidas estad\'isticas", label="stats", summary.stat = c("n", "median","Min","Max"))
 @
 
 Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.Ac\'a podemos ver la informaci\'on estad\'istica para Colombia, debido a que es importante saber el valor central.
@@ -105,7 +105,7 @@ title='Pob en las cabeceras'
 paleta='gray90'
 Log_Cabecera=datos_colombia$cabeLog
 hist(Log_Cabecera,main=title,
-        col=paleta,ylim = c(0,20),
+        col=paleta,ylim = c(0,15),
         ylab = "%")
 ###
 datos_colombia$restoLog=log(datos_colombia$Poblaci..n.Resto)
@@ -113,7 +113,7 @@ title='Pob en el resto'
 paleta='gray90'
 Log_Resto=datos_colombia$restoLog
 hist(Log_Resto,main=title,
-        col=paleta,ylim = c(0,20),
+        col=paleta,ylim = c(0,15),
         ylab = "%")
 ###
 datos_colombia$totalLog=log(datos_colombia$Poblaci..n.Total)
@@ -121,7 +121,7 @@ title='Pob total'
 paleta='gray90'
 Log_Total=datos_colombia$totalLog
 hist(Log_Total,main=title,
-        col=paleta,ylim = c(0,20),
+        col=paleta,ylim = c(0,15),
         ylab = "%")
 
 @
